@@ -1,5 +1,22 @@
-Access Blackberry Z10 media files with OpenBSD (Ethernet over USB)
+How to access Blackberry Z10 media files with OpenBSD
+-----------------------------------------------------
 
-	# pkg_add sharity-light
-	# ifconfig cdce0 inet <local-ip-address> 255.255.255.253
-	# shlight //<blackberry-device-name>/media /mnt -U BlackBerry -P <password>
+### Install the required package (once)
+	$ sudo pkg_add samba
+
+### Prepare Blackberry Z10 (once)
+* System Settings -> Storage and Access
+** USB Connections: Connect to Mac
+* Access using WI-FI: on
+** Set Storage Access Password
+* Identification on Network
+** Device Name 
+** Username
+* Access using WI-FI: off
+
+### Connect
+* Plug USB cable
+* Configure the interface with dhcp:
+	$ sudo dhclient cdce0
+* Login to the device:
+	$ smbclient -R bcast -U <username%<password> //<device-name>/media
