@@ -1,5 +1,5 @@
-Setup
------
+Basic Setup
+-----------
 
 	sudo cu -l /dev/tty00 -s 115200
 
@@ -203,3 +203,19 @@ Useful commands
 ### Restart network
 	. /etc/netstart
 	
+Share setup
+-----------
+
+### Config
+	mkdir /share
+	chmod 755 /share
+	echo 'portmap=YES' >> /etc/rc.conf.local
+	echo 'nfs_server=YES' >> /etc/rc.conf.local
+	echo '/share -alldirs -network=192.168.1 -mask=255.255.255.0' >> /etc/exports
+	
+### Admin commands
+	/etc/rc.d/portmap start
+	/etc/rc.d/mountd start
+	/etc/rc.d/nfsd start
+	rpcinfo -p 192.168.1.1
+	showmount -a 192.168.1.1
