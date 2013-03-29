@@ -83,8 +83,8 @@ Disable PXE boot
 ### Setup DHCP client
 	cp /etc/dhclient.conf /etc/dhclient.conf`date +%Y%m%d`
 	echo "initial-interval 1;" > /etc/dhclient.conf
-	echo "request subnet-mask, broadcast-address, routers, domain-name-servers;" >> /etc/dhclient.conf
-	#echo "request subnet-mask, broadcast-address, routers;" >> /etc/dhclient.conf
+	echo "request subnet-mask, broadcast-address, routers;" >> /etc/dhclient.conf
+	#echo "request subnet-mask, broadcast-address, routers, domain-name-servers;" >> /etc/dhclient.conf
 
 ### Configure packet filter
 	cp /etc/pf.conf /etc/pf.conf`date +%Y%m%d`
