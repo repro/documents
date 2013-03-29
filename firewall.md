@@ -1,7 +1,10 @@
 Basic Setup
 -----------
 
+### Connect to the device
 	sudo cu -l /dev/tty00 -s 115200
+
+### Install
 
 Press 's' during memory test to enter BIOS setup.
 Enable PXE boot.
