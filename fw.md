@@ -1,3 +1,6 @@
+Setup
+-----
+
 	sudo cu -l /dev/tty00 -s 115200
 
 Press 's' during memory test to enter BIOS setup.
@@ -186,3 +189,14 @@ named.conf
 
 ### Configure hosts file
 	vi /etc/hosts
+
+###  Reboot
+	reboot
+	
+
+Useful commands
+---------------
+
+### Restart network
+	. /etc/netstart
+	
