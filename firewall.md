@@ -189,10 +189,13 @@ named.conf
 
 ### Configure hosts file
 	vi /etc/hosts
-
+	
 ###  Reboot
 	reboot
 	
+### resolv.conf
+	vi /etc/resolv.conf
+	nameserver 192.168.1.1
 
 Useful commands
 ---------------
